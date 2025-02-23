@@ -141,15 +141,8 @@ onMounted(() => {
 });
 
 // ----------------------------------------------------------------------------------------------------处理zhifu
-const handlePay = (row) => {
-  request.delete('/buyer/deleteByUsername', {params:{username:row.username}}).then(res => {
-    if (res.data && res.data.code === 0) {
-      ElMessage.success('删除成功');
-      fetchTableData();
-    } else {
-      ElMessage.error('删除失败');
-    }
-  });
+const handlePay = async (row) => {
+  window.open(`http://localhost:8080/alipay/pay?id=${row.orderId}`)
 }
 
 
