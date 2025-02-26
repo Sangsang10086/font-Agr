@@ -18,6 +18,7 @@ export default defineConfig({
   },
   //配置代理
   server: {
+    port: 5174,
 
     proxy: {
       '/api': {

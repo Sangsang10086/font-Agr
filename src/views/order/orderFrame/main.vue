@@ -134,7 +134,6 @@ const defaultTime2: [Date, Date] = [
   new Date(2000, 2, 1, 8, 0, 0),
 ] // '12:00:00', '08:00:00'
 
-
 // ----------------------------------------------------组件挂载时获取数据
 onMounted(() => {
   fetchTableData();
@@ -142,20 +141,11 @@ onMounted(() => {
 
 // ----------------------------------------------------------------------------------------------------处理zhifu
 const handlePay = async (row) => {
-  window.open(`http://localhost:8080/alipay/pay?id=${row.orderId}&money=${row.proPay}`)
+  window.location.href = `http://localhost:8080/alipay/pay?id=${row.orderId}&money=${row.proPay}`;
 
 }
 
-//-------------------------------------------处理支付之后的状态
-window.onload = function () {
-  const urlParams = new URLSearchParams(window.location.search);
-  const status = urlParams.get('status');
-  if (status === 'success') {
-    alert('支付成功');
-  } else if (status === 'fail') {
-    alert('支付失败');
-  }
-};
+
 
 
 // ----------------------------------------
