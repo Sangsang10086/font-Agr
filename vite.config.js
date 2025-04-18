@@ -22,7 +22,7 @@ export default defineConfig({
 
     proxy: {
       '/api': {
-        target: 'http://192.168.161.134', // 后端服务器地址
+        target: 'http://192.168.161.140', // 后端服务器地址
         changeOrigin: true, // 是否改变请求域名,本地会虚拟一个服务器接受请求并代你发送请求，这样就不会有跨域问题（只适合开发环境）
         // headers:{
         //   host: '192.168.161.134',

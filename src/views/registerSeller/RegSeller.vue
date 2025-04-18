@@ -6,7 +6,7 @@
           <span>注册卖家</span>
         </div>
       </template>
-      <el-form :model="form" :rules="rules" ref="formRef">
+      <el-form @keyup.enter="register" :model="form" :rules="rules" ref="formRef">
         <el-form-item prop="username">
           <el-input v-model="form.username" placeholder="请输入用户名"></el-input>
         </el-form-item>

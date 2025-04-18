@@ -71,6 +71,10 @@ const routes = [
             {
                 path:'/viewSelled',
                 component:()=> import('@/views/backSeller/layoutChild/ViewSelled.vue')
+            },
+            {
+                path:'/gosellerOrder',
+                component:()=> import('@/views/backSeller/layoutChild/SellerOrderM.vue')
             }
         ]
 

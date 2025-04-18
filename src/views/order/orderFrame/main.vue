@@ -54,9 +54,9 @@
                 <el-table-column prop="proStatus" label="交易状态" width="200" />
                 <el-table-column  fixed="right" label="操作" align="center" width="280">
                   <template #default="scope">
-                    <el-button v-if="scope.row.proStatus === '待付款'" plain type="danger" size="small" disabled>
-                      取消订单
-                    </el-button>
+<!--                    <el-button v-if="scope.row.proStatus === '待付款'" plain type="danger" size="small" disabled>-->
+<!--                      取消订单-->
+<!--                    </el-button>-->
                     <el-button v-if="scope.row.proStatus === '待付款'" plain type="danger" size="small" @click="handlePay(scope.row)">
                       立即付款
                     </el-button>

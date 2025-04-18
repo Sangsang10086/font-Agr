@@ -12,7 +12,7 @@
   >
 
 
-
+      <el-menu-item index="2-1" @click="gosellerOrder"><el-icon><Sell /></el-icon>订单管理</el-menu-item>
       <el-menu-item index="2-2" @click="gostore"><el-icon><Shop /></el-icon>店铺信息管理</el-menu-item>
       <el-menu-item index="2-3" @click="gosellerPro"><el-icon><Goods /></el-icon>农产品管理</el-menu-item>
       <el-sub-menu index="2-4">
@@ -47,6 +47,11 @@ const gosellerPro = () => {
 const goviewSeller = () => {
   router.push('/viewSelled');
   store.commit('addTag', '农产品销售情况');
+}
+
+const gosellerOrder = () => {
+  store.commit('addTag', '订单管理');
+  router.push('/gosellerOrder');
 }
 
 const router = useRouter();

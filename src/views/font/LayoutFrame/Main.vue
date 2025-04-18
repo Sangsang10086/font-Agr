@@ -134,6 +134,18 @@ const dianjigoumai = (product) => {
   // console.log('Clicked product:', product); // 添加这一行
   topStore.setFormData(product)
   router.push('/detailLayout')
+  const eventData = {
+    event_type: 'product_click',
+    product_id: product.id,
+    timestamp: new Date().getTime()
+  };
+  request.post('/event', eventData).then(res => {
+    if (res.data && res.data.code === 0) {
+      console.log('Event recorded successfully');
+    } else {
+      ElMessage.error('记录事件失败');
+    }
+  });
   // window.location.href = '/detailLayout';
 };
 //=================================================================================搜索
